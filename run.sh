@@ -50,4 +50,6 @@ set -eu
 # upload  backup
   # upload to S3
   echo /usr/local/bin/aws s3 cp $BACKUP_DIR/$BACKUP_FILE_NAME   s3://$BACKUP_S3_BUCKET --profile=default
+  echo removing local file
+  rm -fv $BACKUP_DIR/$BACKUP_FILE_NAME
   echo "Done, full  backup done successfully"
